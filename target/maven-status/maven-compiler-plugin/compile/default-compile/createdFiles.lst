@@ -1,0 +1,9 @@
+ejb\CategoriaFacadeLocal.class
+entity\Categoria_.class
+entity\Categoria.class
+entity\Personas_.class
+entity\Notas.class
+entity\Personas.class
+ejb\AbstractFacade.class
+entity\Notas_.class
+ejb\CategoriaFacade.class

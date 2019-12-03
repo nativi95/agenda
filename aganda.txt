@@ -1,0 +1,49 @@
+create database agenda;
+use agenda;
+
+create table if not exists categorias(
+codigo int not null primary key auto_increment,
+nombre varchar(50) not null
+)engine innodb;
+
+create table if not exists tipo_usuarios(
+codigo int not null primary key auto_increment,
+descripcion varchar(50) not null
+)engine innodb;
+
+
+create table if not exists personas(
+codigo int not null primary key auto_increment,
+nombre varchar(50) not null,
+apellido varchar(50) not null,
+email varchar(50) not null,
+telefono varchar(50) not null
+)engine innodb;
+
+create table if not exists usuarios(
+codigo int not null primary key auto_increment,
+usuario varchar(50) not null,
+pass varchar(50) not null,
+tipo int not null,
+estado boolean,
+persona int not null,
+constraint foreign key(tipo) references tipo_usuarios(codigo) on update cascade,
+constraint foreign key(persona) references personas(codigo) on update cascade
+);
+
+
+create table if not exists notas(
+codigo int not null primary key auto_increment,
+persona int not null,
+categoria int not null,
+encabezado varchar(150) not null,
+cuerpo varchar(150) not null,
+fecha_creacion date not null,
+comentario_admin varchar(200),
+valoracion double not null,
+constraint foreign key(persona) references personas(codigo) on update cascade,
+constraint foreign key(categoria) references categorias(codigo) on update cascade
+)
+
+
+
