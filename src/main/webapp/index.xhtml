@@ -23,7 +23,25 @@
             <p:column headerText="Nombre">
                 <p:outputLabel value="#{ver.nombre}"/>
             </p:column>
+            <p:column headerText="Modificar">
+                <p:commandLink value="Modificar" actionListener="#{categoriaController.leerid(ver)}" update=":dialogo" oncomplete="PF('w').show();"/>
+            </p:column>
+            <p:column headerText="Eliminar">
+                <p:commandLink value="Eliminar" actionListener="#{categoriaController.eliminar(ver)}" update="tabla"/>
+            </p:column>
+            
         </p:dataTable>
+        
+        <p:dialog widgetVar="w" header="Datos">
+            <h:form id="dialogo" >
+                <p:outputLabel value="codigo"/>
+                <p:inputText value="#{categoriaController.categoria.codigo}"/>
+                <p:outputLabel value="nombre"/>
+                <p:inputText value="#{categoriaController.categoria.nombre}"/>
+                <p:commandButton value="Modificar" actionListener="#{categoriaController.modificar()}"/>
+                <p:commandButton value="Cancelar" oncomplete="PF('w').hide();" immediate='true' update=":tabla"/>
+            </h:form>
+        </p:dialog>
         
     </h:body>
 </html>
