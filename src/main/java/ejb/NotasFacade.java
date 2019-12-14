@@ -9,6 +9,7 @@ import entity.Notas;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -30,5 +31,7 @@ public class NotasFacade extends AbstractFacade<Notas> implements NotasFacadeLoc
     super(Notas.class);
     }
 
-  
+    String sql="select n from Notas n";
+    Query query=em.createQuery(sql);
+  List<Nota> lista=
 }

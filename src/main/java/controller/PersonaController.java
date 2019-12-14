@@ -5,7 +5,9 @@
  */
 package controller;
 
+import ejb.CategoriaFacadeLocal;
 import ejb.PersonasFacadeLocal;
+import entity.Categoria;
 import entity.Personas;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -26,6 +28,11 @@ public class PersonaController implements Serializable {
    private PersonasFacadeLocal PersonaEJB;
    private Personas persona;
    private List<Personas> lista;
+   
+    @EJB
+    private CategoriaFacadeLocal categoriaEJB;
+    private Categoria categoria;
+    private List<Categoria> listac;
 
     public Personas getPersona() {
         return persona;

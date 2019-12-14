@@ -2,6 +2,7 @@ entity\Categoria.class
 entity\Usuarios_.class
 entity\Notas.class
 entity\Tipo_Usuario_.class
+ejb\NotasFacadeLocal.class
 ejb\PersonasFacade.class
 ejb\PersonasFacadeLocal.class
 entity\Personas.class
@@ -10,8 +11,10 @@ controller\CategoriaController.class
 entity\Tipo_Usuario.class
 controller\PersonaController.class
 ejb\CategoriaFacadeLocal.class
+controller\NotasController.class
 entity\Categoria_.class
 entity\Personas_.class
 ejb\AbstractFacade.class
+ejb\NotasFacade.class
 entity\Notas_.class
 ejb\CategoriaFacade.class

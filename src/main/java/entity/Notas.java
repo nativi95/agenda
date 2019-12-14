@@ -23,13 +23,14 @@ public class Notas implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
-    
+    @ManyToOne
     @JoinColumn(name = "persona", referencedColumnName="codigo",nullable = false)
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)    
-    private Personas persona;
     
+    
+    private Personas persona;
+      @ManyToOne
    @JoinColumn(name = "categoria", referencedColumnName="codigo",nullable = false)
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  
       private Categoria categoria;
     
     @Column(name = "encabezado")
@@ -40,7 +41,7 @@ public class Notas implements Serializable {
     
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_creacion")
-    private Date fecha_creacion;
+    private Date fecha_creacion= new Date();
     
     @Column(name = "comentario_admin")
     private String comentario_admin;

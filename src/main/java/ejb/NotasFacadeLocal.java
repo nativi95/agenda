@@ -20,5 +20,7 @@ public interface NotasFacadeLocal {
    void remove (Notas nota);
    Notas find (Object id);
    List<Notas> findAll();
+   int count();
+   List<Notas> consulta();
     
 }
